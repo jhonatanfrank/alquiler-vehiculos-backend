@@ -1,6 +1,7 @@
 package com.alquilervehiculos.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
@@ -36,5 +37,13 @@ public class AlquilerServiceImp implements AlquilerService{
 	public void delete(Integer id) {
 		alquilerDao.deleteById(id);
 	}
+
+	@Override
+	public List<Alquiler> findByVehiculoId(Integer id) {
+		// TODO Auto-generated method stub
+		return (List<Alquiler>) alquilerDao.findById(id).orElse(null);
+	}
+
+
 
 }

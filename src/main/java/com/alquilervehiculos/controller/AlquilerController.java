@@ -33,6 +33,13 @@ public class AlquilerController {
 	public ResponseEntity<List<Alquiler>> listarAlquileres() {
 		return new ResponseEntity<>(alquilerService.findAll(), HttpStatus.OK);
 	}
+	
+	/*
+	@GetMapping("/alquileres/vehiculo/{id}")
+	public List<Alquiler> getAlquileresByVehiculoId(@PathVariable Integer idVehiculo) {
+		return alquilerService.findByVehiculoId(idVehiculo);
+	}
+	*/
 
 	/*
 	 * @GetMapping("/alquileres") public List<Alquiler> alquileres() { return
@@ -52,9 +59,11 @@ public class AlquilerController {
 	@PutMapping("/alquileres/{id}")
 	public ResponseEntity<Alquiler> actualizarAlquileres(@PathVariable Integer id, @RequestBody Alquiler alquiler) {
 		Alquiler alquileresEncontrado = alquilerService.findById(id);
+		
 		if (alquileresEncontrado == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
+		
 		try {
 			alquileresEncontrado.setNombres(alquiler.getNombres());
 			alquileresEncontrado.setApellidos(alquiler.getApellidos());
@@ -68,8 +77,9 @@ public class AlquilerController {
 			alquileresEncontrado.setLugarrecojo(alquiler.getLugarrecojo());
 			alquileresEncontrado.setLugardevolucion(alquiler.getLugardevolucion());
 			alquileresEncontrado.setPreciofinal(alquiler.getPreciofinal());
-
-	        alquileresEncontrado.getVehiculo().setId(alquiler.getVehiculo().getId());
+			alquileresEncontrado.setVehiculo(alquiler.getVehiculo());
+			
+	        //alquileresEncontrado.getVehiculo().setId(alquiler.getVehiculo().getId());
 
 			return new ResponseEntity<>(alquilerService.save(alquileresEncontrado), HttpStatus.CREATED);
 

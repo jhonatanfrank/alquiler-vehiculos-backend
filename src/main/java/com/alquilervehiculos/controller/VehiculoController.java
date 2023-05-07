@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -54,12 +55,20 @@ public class VehiculoController {
 		vehiculoActual.setPrecio(vehiculo.getPrecio());
 		vehiculoActual.setEstado(vehiculo.getEstado());
 		vehiculoActual.setFoto(vehiculo.getFoto());
-		vehiculoActual.setCombustible(vehiculo.getCombustible());
-		vehiculoActual.setManejo(vehiculo.getManejo());
-
+		vehiculoActual.setTipocombustible(vehiculo.getTipocombustible());
+		vehiculoActual.setTipomanejo(vehiculo.getTipomanejo());
+		vehiculoActual.setTapizadoasientos(vehiculo.getTapizadoasientos());
 
 		return vehiculoService.save(vehiculoActual);
 	}
+	
+	@PatchMapping("/vehiculos/{id}")
+	public Vehiculo updateEstado(@RequestBody Vehiculo vehiculo, @PathVariable Integer id) {
+	    Vehiculo vehiculoActual = vehiculoService.findById(id);
+	    vehiculoActual.setEstado(vehiculo.getEstado());
+	    return vehiculoService.save(vehiculoActual);
+	}
+
 	
 	
 	
