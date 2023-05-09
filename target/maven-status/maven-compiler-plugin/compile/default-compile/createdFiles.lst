@@ -1,0 +1,17 @@
+com\alquilervehiculos\dao\AlquilerDao.class
+com\alquilervehiculos\service\VehiculoService.class
+com\alquilervehiculos\dao\ClienteDao.class
+com\alquilervehiculos\controller\VehiculoController.class
+com\alquilervehiculos\service\ClienteService.class
+com\alquilervehiculos\service\AlquilerServiceImp.class
+com\alquilervehiculos\service\VehiculoServiceImpl.class
+com\alquilervehiculos\model\Cliente.class
+com\alquilervehiculos\service\AlquilerService.class
+com\alquilervehiculos\AlquilerVehiculosApplication.class
+com\alquilervehiculos\controller\AlquilerController.class
+com\alquilervehiculos\service\ClienteServiceImpl.class
+com\alquilervehiculos\controller\ClienteController.class
+com\alquilervehiculos\dao\VehiculoDao.class
+com\alquilervehiculos\model\Alquiler.class
+com\alquilervehiculos\repository\UsuarioRepository.class
+com\alquilervehiculos\model\Vehiculo.class
