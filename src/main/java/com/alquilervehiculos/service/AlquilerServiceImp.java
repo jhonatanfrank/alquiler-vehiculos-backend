@@ -44,6 +44,10 @@ public class AlquilerServiceImp implements AlquilerService{
 		return (List<Alquiler>) alquilerDao.findById(id).orElse(null);
 	}
 
-
+	@Override
+	public List<Alquiler> findByVehiculoPlaca(String placa) {
+		// TODO Auto-generated method stub
+		return alquilerDao.findByVehiculoPlaca(placa);
+	}
 
 }

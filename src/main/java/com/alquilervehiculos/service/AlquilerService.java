@@ -17,5 +17,9 @@ public interface AlquilerService {
 	public void delete(Integer id);
 	
 	public List<Alquiler> findByVehiculoId(Integer id);
-
+	
+	/**/
+	
+    public List<Alquiler> findByVehiculoPlaca(String placa);	
+	
 }

@@ -67,9 +67,7 @@ public class VehiculoController {
 	    Vehiculo vehiculoActual = vehiculoService.findById(id);
 	    vehiculoActual.setEstado(vehiculo.getEstado());
 	    return vehiculoService.save(vehiculoActual);
-	}
-
-	
+	}	
 	
 	
 	@DeleteMapping("/vehiculos/{id}")

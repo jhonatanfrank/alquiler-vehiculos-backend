@@ -37,6 +37,7 @@ public class Vehiculo implements Serializable {
 	private Double precio;
 	private Boolean estado;
 	private String foto;
+	private String descripcion;
 	//private String combustible;
 	//private String manejo;
 
